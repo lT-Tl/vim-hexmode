@@ -17,7 +17,7 @@ external command, `xxd` is that external shell command.
 You can go back with `-r` option of `xxd`, so:
 `:%!xxd -r`
 
-It would be very tdious to do so, so creating a Vim plugin is a better way to implment it, that means you
+It would be very tedious to do so, so creating a Vim plugin is a better way to implment it, that means you
 can easily toggle back-and-forth between hex and non-hex mode.
 
 ## Installation
