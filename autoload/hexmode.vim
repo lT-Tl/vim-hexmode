@@ -50,7 +50,7 @@ function! hexmode#IsBinaryCharset()
 
   silent let charset = system('file -b -i ' .. acFilePath)->split(';')[1]
   
-  charset = trim(charset)
+  let charset = trim(charset)
 
   let isBin = 0
 
