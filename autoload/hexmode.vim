@@ -20,12 +20,9 @@ function! hexmode#ToggleHexMode()
     let b:bufFt = &l:ft
     let b:bufBin = &l:bin
 
-    setlocal binary
-
-    silent edit
     silent execute "%!xxd"
 
-    setlocal bin
+    setlocal binary
     setlocal ft=xxd
 
     let b:hexOn = 1
