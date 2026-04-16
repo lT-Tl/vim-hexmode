@@ -52,7 +52,7 @@ function! hexmode#IsBinaryCharset()
   let isBin = 0
 
   if charset ==# 'charset=binary'
-    isBin = 1
+    let isBin = 1
   endif
 
   return isBin
