@@ -44,15 +44,17 @@ endfunction
 " and automatically enter the hex mode.
 function! hexmode#IsBinaryCharset()
   let acFilePath = expand('<afile>:p')
-
-  silent let charset = system('file -b -i ' .. acFilePath)->split(';')[1]
-  
-  let charset = trim(charset)
+  silent let mimeTypes = system('file -b -i ' .. acFilePath)->split(';')
 
   let isBin = 0
 
-  if charset ==# 'charset=binary'
-    let isBin = 1
+  if len(mimeTypes) >=2
+    let charset = mimeTypes[1]
+    let charset = trim(charset)
+
+    if charset ==# 'charset=binary'
+      let isBin = 1
+    endif
   endif
 
   return isBin
